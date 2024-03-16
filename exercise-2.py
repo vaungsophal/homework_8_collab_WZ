@@ -1,16 +1,22 @@
 def index_power(numbers, n):
+    # Check if list has enough elements for index n
     if len(numbers) > n:
+        # Calculate and return the result
         return numbers[n] ** n
     else:
+        # Return -1 if index n is out of range
         return -1
 
-# # Testing
-# numbers_1 = [1, 2, 3, 4]
-# numbers_2 = [1, 3, 10, 100]
-# numbers_3 = [0, 1]
-# numbers_4 = [1, 2]
+# Get user input for list of numbers separated by commas
+user_input = input("Enter a list of numbers separated by commas: ").split(",")
+numbers_list = []
+# Add user input elements to numbers_list as integers
+for num in user_input:
+    numbers_list.append(int(num))
 
-# print(index_power(numbers_1, 2))
-# print(index_power(numbers_2, 3)) 
-# print(index_power(numbers_3, 0)) 
-# print(index_power(numbers_4, 3))
+# Get user input for value of n
+n = int(input("Enter the value of n: "))
+
+# Calculate and print the result
+result = index_power(numbers_list, n)
+print(result)
